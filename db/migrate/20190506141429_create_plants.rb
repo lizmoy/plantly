@@ -7,6 +7,7 @@ class CreatePlants < ActiveRecord::Migration[5.2]
       t.string :light
       t.string :water
       t.string :humidity
+      t.string :image
       t.references :user, foreign_key: true
 
       t.timestamps

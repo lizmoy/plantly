@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_05_183846) do
+ActiveRecord::Schema.define(version: 2019_05_06_141908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "logs", force: :cascade do |t|
+    t.date "log_date"
+    t.string "cared_for"
+    t.string "condition"
+    t.string "description"
+    t.bigint "plant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plant_id"], name: "index_logs_on_plant_id"
+  end
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
@@ -22,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_05_05_183846) do
     t.string "light"
     t.string "water"
     t.string "humidity"
+    t.string "image"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,5 +48,6 @@ ActiveRecord::Schema.define(version: 2019_05_05_183846) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "logs", "plants"
   add_foreign_key "plants", "users"
 end

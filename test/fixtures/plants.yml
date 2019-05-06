@@ -7,6 +7,7 @@ one:
   light: MyString
   water: MyString
   humidity: MyString
+  image: MyString
   user: one
 
 two:
@@ -16,4 +17,5 @@ two:
   light: MyString
   water: MyString
   humidity: MyString
+  image: MyString
   user: two

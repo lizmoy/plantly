@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  log_date: 2019-05-06
+  cared_for: MyString
+  condition: MyString
+  description: MyString
+  plant: one
+
+two:
+  log_date: 2019-05-06
+  cared_for: MyString
+  condition: MyString
+  description: MyString
+  plant: two
