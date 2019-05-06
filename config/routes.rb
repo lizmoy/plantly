@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :users do
-  end
+  post '/auth/login', to: 'authentication#login'
+  resources :users
 
   resources :plants do
     resources :logs
