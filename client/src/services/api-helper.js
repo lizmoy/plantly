@@ -22,7 +22,7 @@ export const registerUser = (registerData) => {
     }
   };
 
-  return fetch(`${baseUrl}/users/`, opts)
+  return fetch(`${baseUrl}/users`, opts)
     .then(resp => resp.json())
 }
 
