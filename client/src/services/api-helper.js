@@ -41,6 +41,7 @@ export const createPlant = (data) => {
 }
 
 export const showUserPlants = (id) => {
+    console.log('GETTING PLANTS!!!!!', id)
     const opts = {
         method: 'GET',
         headers: {
@@ -53,7 +54,14 @@ export const showUserPlants = (id) => {
 }
 
 export const showUserPlant = (id) => {
-    return fetch(`${baseUrl}/plants/${id}`)
+    const opts = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+        }
+    }
+    return fetch(`${baseUrl}/plants/${id}`, opts)
     .then(resp => resp.json())
 }
 

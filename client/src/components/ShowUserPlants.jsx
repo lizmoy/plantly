@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-// import { withRouter } from 'react-router'
 
 class ShowUserPlants extends Component {
-
+    // componentDidMount(){
+    //     this.props.getUserPlants(this.props.currentUser.id)
+    // }
+    
     render() {
+        // console.log("currentUser", this.props.currentUser.id)
         return(
             <div className= "plant-container">
-                {this.props.plants.map(plant => (
+                {this.props.currentUser &&
+                this.props.plants.map(plant => (
                     <div className="plant-details">
                     <h3>Name: {plant.name}</h3>
                     <img className="plant-image" src={plant.image} alt=""/>
