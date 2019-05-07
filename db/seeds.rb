@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-liz = User.create!(username: "liz", email: "liz@gmail.com", password_digest: "123")
-juniper = User.create!(username: "juniper", email:"juniper@gmail.com", password_digest: "456")
-flora = User.create!(username: "flora", email: "flora@gmail.com", password_digest: "789")
+liz = User.create!(username: "liz", email: "liz@gmail.com", password: "lizzie")
+juniper = User.create!(username: "juniper", email:"juniper@gmail.com", password: "juniper")
+flora = User.create!(username: "flora", email: "flora@gmail.com", password: "flora")
 
 monstera = Plant.create!(name: "Monstera", description: "Monstera deliciosa is a species of evergreen tropical vine", size: "medium", light: "Bright indirect. Thrives in bright to medium indirect light. Not suited for intense, direct sun.", water: "About every 1-2 weeks", humidity: "Any", image: "https://i.imgur.com/VwFN3aW.jpg", user: liz)
 pilea = Plant.create!(name: "Pilea", description: "Pilea peperomioides (Urticaceae) is an Asiatic perennial herb that is native to Yunnan Province in Southern China at the foot of the Himalayas.", size: "small", light: "Bright direct. Thrives in bright direct light, but can tolerate bright to medium indirect light.", water: "weekly", humidity: "Normal to Humid", image: "https://i.imgur.com/A4a6Hfr.jpg", user: liz)

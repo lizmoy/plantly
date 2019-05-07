@@ -40,16 +40,15 @@ export const createPlant = (data) => {
     .catch( e => e )
 }
 
-export const showUserPlants = (data) => {
+export const showUserPlants = (id) => {
     const opts = {
         method: 'GET',
-        body: JSON.stringify({ plant: data }),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('jwt')}`
         }
     }
-    return fetch(`${baseUrl}/plants`, opts)
+    return fetch(`${baseUrl}/users/${id}`, opts)
     .then(resp => resp.json())
 }
 

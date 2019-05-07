@@ -3,7 +3,8 @@ import { Route, Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import decode from 'jwt-decode'
 import AuthForm from './components/AuthForm'
-import { loginUser, registerUser } from './services/api-helper'
+import ShowUserPlants from './components/ShowUserPlants'
+import { loginUser, registerUser, showUserPlants } from './services/api-helper'
 import './App.css';
 
 class App extends Component {
@@ -16,14 +17,13 @@ class App extends Component {
         email: '',
         password: ''
       },
-      formData: {
-        name: ""
-      }
+      plants: []
     }
     this.handleAuthChange = this.handleAuthChange.bind(this)
     this.handleRegister = this.handleRegister.bind(this)
     this.handleLogin = this.handleLogin.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
+    this.getUserPlants = this.getUserPlants.bind(this)
   }
 
   componentDidMount(){
@@ -34,7 +34,11 @@ class App extends Component {
         currentUser: userData
       })
     }
+    const userData = decode(token)
+    this.getUserPlants(userData)
   }
+
+  //===================Auth==========================
 
   handleAuthChange(e) {
     const { name, value } = e.target
@@ -72,6 +76,14 @@ class App extends Component {
     })
   }
 
+  //====================Calls for data===================
+
+  async getUserPlants(data) {
+    console.log("data", data)
+    const user = await showUserPlants(data.user_id)
+    this.setState({ plants: user.plants })
+  }
+
   render() {
     return(
       <div className="App">
@@ -105,6 +117,14 @@ class App extends Component {
           authForm={this.state.authForm}
           />
         )} />
+        <Link to="/users/:id">Plants</Link>
+        <Route exact path="/users/:id" render={() => (
+          <ShowUserPlants
+            plants={this.state.plants}
+            getUserPlants={this.getUserPlants}
+            // currentUser={this.currentUser}
+          />
+        )}/>
       </div>
     )
   }
