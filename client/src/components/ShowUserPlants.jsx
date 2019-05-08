@@ -11,7 +11,7 @@ class ShowUserPlants extends Component {
                 <div className="plants">
                     {this.props.currentUser &&
                     this.props.plants.map(plant => (
-                        <Link to={`/users/${this.props.currentUser.user_id}/plants/:name`} key={Math.random()}>
+                        <Link to={`/users/${this.props.currentUser.user_id}/plants/${plant.name}`} key={Math.random()}>
                             <div className="plant-info">
                             <h3>Name: {plant.name}</h3>
                             <img className="plant-image" src={plant.image} alt=""/>

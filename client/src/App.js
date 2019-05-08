@@ -128,7 +128,6 @@ class App extends Component {
         user_id: this.state.currentUser.user_id
       }
     }))
-    // console.log("user_id", user_id)
   }
 
   render() {
