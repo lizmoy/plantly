@@ -86,7 +86,7 @@ export const destroyPlant = (id) => {
             'Authorization': `Bearer ${localStorage.getItem('jwt')}`
         }
     }
-
+    console.log(`deleting from endpoint: ${baseUrl}/plants/${id}`)
     return fetch(`${baseUrl}/plants/${id}`, opts)
         .catch( e => e)
 }

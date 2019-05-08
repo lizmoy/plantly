@@ -11,7 +11,7 @@ class PlantsController < ApplicationController
 
   # GET /plants/1
   def show
-    render json: @plant, include: :logs
+    render json: @plant, include: :log
   end
 
   # POST /plants

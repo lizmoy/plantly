@@ -4,8 +4,8 @@ import { withRouter } from 'react-router'
 import decode from 'jwt-decode'
 import AuthForm from './components/AuthForm'
 import ShowUserPlants from './components/ShowUserPlants'
-import ShowUserPlant from './components/ShowPlant'
-import { loginUser, registerUser, showUserPlants, createPlant } from './services/api-helper'
+import ShowPlant from './components/ShowPlant'
+import { loginUser, registerUser, showUserPlants, createPlant, destroyPlant } from './services/api-helper'
 import './App.css';
 
 class App extends Component {
@@ -29,7 +29,8 @@ class App extends Component {
         image: "",
         user_id: ""
       },
-      plants: []
+      plants: [],
+      plant: null
     }
     this.handleAuthChange = this.handleAuthChange.bind(this)
     this.handleRegister = this.handleRegister.bind(this)
@@ -38,6 +39,8 @@ class App extends Component {
     this.getUserPlants = this.getUserPlants.bind(this)
     this.addPlant = this.addPlant.bind(this)
     this.handleFormChange = this.handleFormChange.bind(this)
+    this.deletePlant = this.deletePlant.bind(this)
+    this.getPlant = this.getPlant.bind(this)
   }
 
   componentDidMount(){
@@ -49,7 +52,6 @@ class App extends Component {
       })
       this.getUserPlants(userData)
       console.log('user data: ', userData)
-      this.addPlant()
     }
   }
 
@@ -112,6 +114,13 @@ class App extends Component {
     this.setState({ plants: user.plants })
   }
 
+  getPlant(plant){
+    console.log('getting plant')
+    this.setState({
+      plant
+    })
+  }
+
   async addPlant() {
     console.log("this.state.formData", this.state.formData)
     const newPlant = await createPlant(this.state.formData)
@@ -127,6 +136,14 @@ class App extends Component {
         image: "",
         user_id: this.state.currentUser.user_id
       }
+    }))
+  }
+
+  async deletePlant(plant) {
+    console.log("DELETING PLANT: ", plant)
+    await destroyPlant(plant.id)
+    this.setState(prevState => ({
+      plants: prevState.plants.filter(el => el.id !== plant.id)
     }))
   }
 
@@ -178,9 +195,12 @@ class App extends Component {
               />
             )}/>
             <Route exact path={`/users/${this.state.currentUser.user_id}/plants/:name`} render={(props) => (
-              <ShowUserPlant
+              <ShowPlant
+                getPlant={this.getPlant}
                 plants={this.state.plants}
                 currentUser={this.state.currentUser}
+                plant={this.state.plant}
+                deletePlant={this.deletePlant}
                 {...props}
               />
             )}/>
