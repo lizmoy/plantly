@@ -5,7 +5,7 @@ import decode from 'jwt-decode'
 import AuthForm from './components/AuthForm'
 import ShowUserPlants from './components/ShowUserPlants'
 import ShowUserPlant from './components/ShowPlant'
-import { loginUser, registerUser, showUserPlants } from './services/api-helper'
+import { loginUser, registerUser, showUserPlants, createPlant } from './services/api-helper'
 import './App.css';
 
 class App extends Component {
@@ -19,6 +19,15 @@ class App extends Component {
         email: '',
         password: ''
       },
+      formData: {
+        name: "",
+        description: "",
+        size: "",
+        light: "",
+        water: "",
+        humidity: "",
+        image: ""
+      },
       plants: []
     }
     this.handleAuthChange = this.handleAuthChange.bind(this)
@@ -26,6 +35,8 @@ class App extends Component {
     this.handleLogin = this.handleLogin.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
     this.getUserPlants = this.getUserPlants.bind(this)
+    this.addPlant = this.addPlant.bind(this)
+    this.handleFormChange = this.handleFormChange.bind(this)
   }
 
   componentDidMount(){
@@ -38,6 +49,20 @@ class App extends Component {
       this.getUserPlants(userData)
       console.log('user data: ', userData)
     }
+  }
+
+  handleFormChange(e) {
+    this.setState({
+      formData: {
+        name: e.target.value,
+        description: e.target.value,
+        size: e.target.value,
+        light: e.target.value,
+        water: e.target.value,
+        humidity: e.target.value,
+        image: e.target.value
+      }
+    })
   }
 
   //===================Auth==========================
@@ -86,6 +111,22 @@ class App extends Component {
     this.setState({ plants: user.plants })
   }
 
+  async addPlant() {
+    const newPlant = await createPlant(this.state.formData)
+    this.setState(prevState => ({
+      plants: [...prevState.plants, newPlant],
+      formData: {
+        name: "",
+        description: "",
+        size: "",
+        light: "",
+        water: "",
+        humidity: "",
+        image: ""
+      }
+    }))
+  }
+
   render() {
     console.log("currentUser", this.state.currentUser)
     console.log("plants", this.state.plants)
@@ -97,8 +138,8 @@ class App extends Component {
           </Link>
           {this.state.currentUser
           ?
-          <div>
-            <p>Hi {this.state.currentUser.username}</p>
+          <div className="logged-in">
+            <p className="welcome">Hi {this.state.currentUser.username}</p>
             <button className="logout-button" onClick={this.handleLogout}>Logout</button>
           </div>
           :
@@ -128,12 +169,16 @@ class App extends Component {
               <ShowUserPlants
                 plants={this.state.plants}
                 currentUser={this.state.currentUser}
+                formData={this.state.formData}
+                addPlant={this.addPlant}
+                handleFormChange={this.handleFormChange}
               />
             )}/>
-            <Route exact path="/user/:plant" render={() => (
+            <Route exact path={`/users/${this.state.currentUser.user_id}/plants/:name`} render={(props) => (
               <ShowUserPlant
                 plants={this.state.plants}
                 currentUser={this.state.currentUser}
+                {...props}
               />
             )}/>
           </div>

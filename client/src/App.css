@@ -21,7 +21,7 @@
   font-weight: bold;
   color: white;
   justify-content: flex-start;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 a {
@@ -31,7 +31,7 @@ a {
 .logout-button,
 .login-button {
   height: 35px;
-  margin-right: 30px;
+  margin-right: 40px;
   background-color: #B37266;
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
@@ -41,6 +41,19 @@ a {
   border-radius: 10px;
   padding: 0px 20px 0px 20px;
   justify-content: center;
+}
+
+.logged-in {
+  display: flex;
+  align-items: center;
+}
+
+.welcome {
+  color: white;
+  margin: 0;
+  margin-right: 20px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12pt;
 }
 
 /* --------------------- Auth Form ---------------------- */
@@ -130,7 +143,16 @@ a {
   margin-top: 12px;
 }
 
+/* -------------------- Plants ------------------- */
+
 .plant-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.plants {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -143,7 +165,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 20px auto;
 }
 
@@ -153,4 +175,48 @@ a {
 
 p {
   font-size: 12px;
+}
+
+.add-plant-button {
+  background-color: #B37266;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  font-size: 10pt;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 4px 12px 4px 12px;
+}
+
+.add-plant-form {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #B37266;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.plant-form-title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.plant-form-input {
+  margin-bottom: 10px;
+  width: 450px;
+}
+
+.add-plant-submit {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  font-size: 10pt;
+  border: none;
+  border-radius: 10px;
+  padding: 4px 12px 4px 12px;
 }
