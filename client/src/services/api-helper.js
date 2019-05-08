@@ -53,17 +53,17 @@ export const showUserPlants = (id) => {
     .then(resp => resp.json())
 }
 
-export const showUserPlant = (id) => {
-    const opts = {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('jwt')}`
-        }
-    }
-    return fetch(`${baseUrl}/plants/${id}`, opts)
-    .then(resp => resp.json())
-}
+// export const showUserPlant = (id) => {
+//     const opts = {
+//         method: 'GET',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+//         }
+//     }
+//     return fetch(`${baseUrl}/plants/${id}`, opts)
+//     .then(resp => resp.json())
+// }
 
 export const updatePlant = (id, data) => {
     const opts = {

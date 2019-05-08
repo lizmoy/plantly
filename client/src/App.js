@@ -4,6 +4,7 @@ import { withRouter } from 'react-router'
 import decode from 'jwt-decode'
 import AuthForm from './components/AuthForm'
 import ShowUserPlants from './components/ShowUserPlants'
+import ShowUserPlant from './components/ShowPlant'
 import { loginUser, registerUser, showUserPlants } from './services/api-helper'
 import './App.css';
 
@@ -37,8 +38,6 @@ class App extends Component {
       this.getUserPlants(userData)
       console.log('user data: ', userData)
     }
-    // const userData = decode(token)
-    // this.getUserPlants(userData)
   }
 
   //===================Auth==========================
@@ -103,7 +102,7 @@ class App extends Component {
             <button onClick={this.handleLogout}>Logout</button>
           </div>
           :
-          <button onClick={() => this.props.history.push('/login')}>Login/Register</button>
+          <button onClick={() => this.props.history.push('/login')}>Login</button>
           }
         </header>
         <Route path="/register" render={() => (
@@ -124,24 +123,21 @@ class App extends Component {
         )} />
         {this.state.currentUser &&  (
           <div>
-          <Link to={`/users/${this.state.currentUser.user_id}`}>Plants</Link>
-          <Route exact path={`/users/${this.state.currentUser.user_id}`} render={() => (
-            <ShowUserPlants
-              plants={this.state.plants}
-              // getUserPlants={this.getUserPlants}
-              currentUser={this.state.currentUser}
-            />
-          )}/>
+            <Link to={`/users/${this.state.currentUser.user_id}`}>Plants</Link>
+            <Route exact path={`/users/${this.state.currentUser.user_id}`} render={() => (
+              <ShowUserPlants
+                plants={this.state.plants}
+                currentUser={this.state.currentUser}
+              />
+            )}/>
+            <Route exact path="/user/:plant" render={() => (
+              <ShowUserPlant
+                plants={this.state.plants}
+                currentUser={this.state.currentUser}
+              />
+            )}/>
           </div>
           )}
-        {/* <Link to={`/users/${this.state.currentUser.user_id}`}>Plants</Link>
-        <Route exact path={`/users/${this.state.currentUser.user_id}`} render={() => (
-          <ShowUserPlants
-            plants={this.state.plants}
-            // getUserPlants={this.getUserPlants}
-            currentUser={this.state.currentUser}
-          />
-        )}/> */}
       </div>
     )
   }
