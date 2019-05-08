@@ -183,6 +183,9 @@ class App extends Component {
           <button className="login-button" onClick={() => this.props.history.push('/login')}>Login</button>
           }
         </header>
+        
+        {!this.state.currentUser &&
+        <>
         <Route path="/register" render={() => (
           <AuthForm
           authFormTitle="Register"
@@ -199,9 +202,12 @@ class App extends Component {
           authForm={this.state.authForm}
           />
         )} />
+        </>
+        }
+     
         {this.state.currentUser &&  (
           <div>
-            <Link to={`/users/${this.state.currentUser.user_id}`}>Plants</Link>
+            <Link to={`/users/${this.state.currentUser.user_id}`}>My Plants</Link>
             <Route exact path={`/users/${this.state.currentUser.user_id}`} render={() => (
               <ShowUserPlants
                 plants={this.state.plants}
