@@ -26,7 +26,8 @@ class App extends Component {
         light: "",
         water: "",
         humidity: "",
-        image: ""
+        image: "",
+        user_id: ""
       },
       plants: []
     }
@@ -48,21 +49,21 @@ class App extends Component {
       })
       this.getUserPlants(userData)
       console.log('user data: ', userData)
+      this.addPlant()
     }
   }
 
   handleFormChange(e) {
-    this.setState({
-      formData: {
-        name: e.target.value,
-        description: e.target.value,
-        size: e.target.value,
-        light: e.target.value,
-        water: e.target.value,
-        humidity: e.target.value,
-        image: e.target.value
-      }
-    })
+    console.log("handlFormChange is working")
+    const { name, value } = e.target;
+    this.setState(prevState => (
+      { 
+        formData: { 
+          ...prevState.formData,
+          [name]: value 
+      } 
+    }
+    ))
   }
 
   //===================Auth==========================
@@ -112,6 +113,7 @@ class App extends Component {
   }
 
   async addPlant() {
+    console.log("this.state.formData", this.state.formData)
     const newPlant = await createPlant(this.state.formData)
     this.setState(prevState => ({
       plants: [...prevState.plants, newPlant],
@@ -122,7 +124,8 @@ class App extends Component {
         light: "",
         water: "",
         humidity: "",
-        image: ""
+        image: "",
+        user_id: ""
       }
     }))
   }
