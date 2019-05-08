@@ -125,9 +125,10 @@ class App extends Component {
         water: "",
         humidity: "",
         image: "",
-        user_id: ""
+        user_id: this.state.currentUser.user_id
       }
     }))
+    // console.log("user_id", user_id)
   }
 
   render() {
