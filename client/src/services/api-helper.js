@@ -67,7 +67,7 @@ export const showUserPlant = (id) => {
 
 export const updatePlant = (id, data) => {
     const opts = {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify({ plant: data }),
         headers: {
           'Content-Type': 'application/json',

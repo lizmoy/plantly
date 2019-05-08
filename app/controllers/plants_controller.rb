@@ -17,8 +17,7 @@ class PlantsController < ApplicationController
   # POST /plants
   def create
     @plant = Plant.new(plant_params)
-
-    if @plant.save
+    if @current_user.plants << @plant
       render json: @plant, status: :created, location: @plant
     else
       render json: @plant.errors, status: :unprocessable_entity

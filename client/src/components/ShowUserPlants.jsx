@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import PlantForm from './PlantForm';
+import AddPlantForm from './AddPlantForm';
 
 class ShowUserPlants extends Component {
     render() {
@@ -11,16 +11,16 @@ class ShowUserPlants extends Component {
                 <div className="plants">
                     {this.props.currentUser &&
                     this.props.plants.map(plant => (
-                        <Link to={`/users/${this.props.currentUser.user_id}/plants/${plant.name}`} key={Math.random()}>
+                        <Link to={`/users/${this.props.currentUser.user_id}/plants/${plant.id}`} key={Math.random()}>
                             <div className="plant-info">
-                            <h3>Name: {plant.name}</h3>
+                            <h3>{plant.name}</h3>
                             <img className="plant-image" src={plant.image} alt=""/>
                             </div>
                         </Link>
                     ))}
                 </div>
                 <div className="add-form">
-                    <PlantForm
+                    <AddPlantForm
                         plants={this.props.plants}
                         formData={this.props.formData}
                         addPlant={this.props.addPlant}

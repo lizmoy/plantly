@@ -5,7 +5,7 @@ import decode from 'jwt-decode'
 import AuthForm from './components/AuthForm'
 import ShowUserPlants from './components/ShowUserPlants'
 import ShowPlant from './components/ShowPlant'
-import { loginUser, registerUser, showUserPlants, createPlant, destroyPlant } from './services/api-helper'
+import { loginUser, registerUser, showUserPlants, createPlant, destroyPlant, updatePlant } from './services/api-helper'
 import './App.css';
 
 class App extends Component {
@@ -41,6 +41,8 @@ class App extends Component {
     this.handleFormChange = this.handleFormChange.bind(this)
     this.deletePlant = this.deletePlant.bind(this)
     this.getPlant = this.getPlant.bind(this)
+    this.updatePlant = this.updatePlant.bind(this)
+    this.setUpdateForm = this.setUpdateForm.bind(this)
   }
 
   componentDidMount(){
@@ -139,6 +141,21 @@ class App extends Component {
     }))
   }
 
+  async updatePlant(plant) {
+    console.log("UPDATING PLANT: ", plant)
+    console.log("this.state.formData", this.state.formData)
+    const updatedPlant = await updatePlant(plant.id, this.state.formData)
+    this.setState(prevState =>({
+      plants: prevState.plants.map(el => el.id === plant.id ? updatedPlant : el)
+    }))
+  }
+
+  setUpdateForm(plant) {
+    this.setState({
+      formData: plant
+    })
+  }
+
   async deletePlant(plant) {
     console.log("DELETING PLANT: ", plant)
     await destroyPlant(plant.id)
@@ -194,13 +211,17 @@ class App extends Component {
                 handleFormChange={this.handleFormChange}
               />
             )}/>
-            <Route exact path={`/users/${this.state.currentUser.user_id}/plants/:name`} render={(props) => (
+            <Route exact path={`/users/${this.state.currentUser.user_id}/plants/:id`} render={(props) => (
               <ShowPlant
                 getPlant={this.getPlant}
                 plants={this.state.plants}
                 currentUser={this.state.currentUser}
                 plant={this.state.plant}
                 deletePlant={this.deletePlant}
+                formData={this.state.formData}
+                handleFormChange={this.handleFormChange}
+                updatePlant={this.updatePlant}
+                setUpdateForm={this.setUpdateForm}
                 {...props}
               />
             )}/>

@@ -11,6 +11,7 @@ export default class PlantForm extends Component {
         console.log("this.props.formData", this.props.formData)
         return (
             <div>
+                
                 {this.state.isAdd ?
                     <div>
                         <form className="add-plant-form" onSubmit={(e) => {
