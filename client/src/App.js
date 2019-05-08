@@ -91,18 +91,18 @@ class App extends Component {
     console.log("plants", this.state.plants)
     return(
       <div className="App">
-        <header>
+        <header className="header">
           <Link to="/">
-            <h1>Plant.ly</h1>
+            <div className="logo">Plant.ly</div>
           </Link>
           {this.state.currentUser
           ?
           <div>
             <p>Hi {this.state.currentUser.username}</p>
-            <button onClick={this.handleLogout}>Logout</button>
+            <button className="logout-button" onClick={this.handleLogout}>Logout</button>
           </div>
           :
-          <button onClick={() => this.props.history.push('/login')}>Login</button>
+          <button className="login-button" onClick={() => this.props.history.push('/login')}>Login</button>
           }
         </header>
         <Route path="/register" render={() => (
