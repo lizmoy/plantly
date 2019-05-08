@@ -106,7 +106,14 @@ export const createLog = (plant_id, data) => {
 }
 
 export const showUserLogs = (plant_id) => {
-    return fetch(`${baseUrl}/plants/:${plant_id}/logs`)
+    const opts = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+        }
+    }
+    return fetch(`${baseUrl}/plants/:${plant_id}/logs`, opts)
     .then(resp => resp.json())
 }
 

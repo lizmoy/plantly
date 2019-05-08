@@ -5,7 +5,7 @@ import decode from 'jwt-decode'
 import AuthForm from './components/AuthForm'
 import ShowUserPlants from './components/ShowUserPlants'
 import ShowPlant from './components/ShowPlant'
-import { loginUser, registerUser, showUserPlants, createPlant, destroyPlant, updatePlant } from './services/api-helper'
+import { loginUser, registerUser, showUserPlants, createPlant, destroyPlant, updatePlant, showUserLogs } from './services/api-helper'
 import './App.css';
 
 class App extends Component {
