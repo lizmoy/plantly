@@ -197,6 +197,20 @@ a {
 
 /* -------------------- Plants ------------------- */
 
+.plant-parent-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.plants-link {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  font-size: 22pt;
+  color: #020100;
+  margin: 20px auto;
+  text-decoration-line: underline;
+}
+
 .plant-container {
   display: flex;
   flex-direction: column;
@@ -210,15 +224,23 @@ a {
   justify-content: center;
 }
 
+.plant-name {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14pt;
+  color: #363A21;
+}
+
 .plant-info {
-  width: 100%;
+  max-width: 250px;
   height: 100%;
+  background-color: #d9ffda;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
-  margin: 20px auto;
+  border: 1px solid #0a6334;
+  margin: 10px;
+  padding: 0px;
 }
 
 .plant-image {
@@ -238,6 +260,7 @@ p {
   border: none;
   border-radius: 10px;
   padding: 4px 12px 4px 12px;
+  margin: 20px;
 }
 
 .add-plant-form {
@@ -271,4 +294,8 @@ p {
   border: none;
   border-radius: 10px;
   padding: 4px 12px 4px 12px;
+}
+
+.plant-details {
+  border: 1px solid black;
 }

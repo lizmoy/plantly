@@ -33,12 +33,14 @@ class ShowPlant extends Component {
 					<div>
 						<div className="plant-details">
 							<img className="plant-image" src={selectedPlant.image} alt="" />
-							<p>{selectedPlant.name}</p>
-							<p>Description: {selectedPlant.description}</p>
-							<p>Size: {selectedPlant.size}</p>
-							<p>Light: {selectedPlant.light}</p>
-							<p>Water: {selectedPlant.water}</p>
-							<p>Humidity: {selectedPlant.humidity}</p>
+							<div>
+								<p>{selectedPlant.name}</p>
+								<p>Description: {selectedPlant.description}</p>
+								<p>Size: {selectedPlant.size}</p>
+								<p>Light: {selectedPlant.light}</p>
+								<p>Water: {selectedPlant.water}</p>
+								<p>Humidity: {selectedPlant.humidity}</p>
+							</div>
 						</div>
 						{this.state.isEdit ?
 								<form onSubmit={(e) => {

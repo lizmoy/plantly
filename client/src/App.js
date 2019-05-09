@@ -5,7 +5,7 @@ import decode from 'jwt-decode'
 import AuthForm from './components/AuthForm'
 import ShowUserPlants from './components/ShowUserPlants'
 import ShowPlant from './components/ShowPlant'
-import { loginUser, registerUser, showUserPlants, createPlant, destroyPlant, updatePlant, showUserLogs } from './services/api-helper'
+import { loginUser, registerUser, showUserPlants, createPlant, destroyPlant, updatePlant } from './services/api-helper'
 import './App.css';
 import Homepage from './components/Homepage';
 
@@ -207,8 +207,8 @@ class App extends Component {
         }
      
         {this.state.currentUser &&  (
-          <div>
-            <Link to={`/users/${this.state.currentUser.user_id}`}>My Plants</Link>
+          <div className="plant-parent-container">
+            <Link to={`/users/${this.state.currentUser.user_id}`} className="plants-link">My Plants</Link>
             <Route exact path={`/users/${this.state.currentUser.user_id}`} render={() => (
               <ShowUserPlants
                 plants={this.state.plants}

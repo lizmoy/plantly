@@ -11,11 +11,11 @@ class ShowUserPlants extends Component {
                 <div className="plants">
                     {this.props.currentUser &&
                     this.props.plants.map(plant => (
-                        <Link to={`/users/${this.props.currentUser.user_id}/plants/${plant.id}`} key={Math.random()}>
-                            <div className="plant-info">
-                            <h3>{plant.name}</h3>
-                            <img className="plant-image" src={plant.image} alt=""/>
-                            </div>
+                        <Link to={`/users/${this.props.currentUser.user_id}/plants/${plant.id}`} key={Math.random()} className="plant-info">
+                            <React.Fragment >
+                                <p className="plant-name">{plant.name}</p>
+                                <img className="plant-image" src={plant.image} alt=""/>
+                            </React.Fragment>
                         </Link>
                     ))}
                 </div>
