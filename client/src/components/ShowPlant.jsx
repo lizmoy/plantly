@@ -33,7 +33,7 @@ class ShowPlant extends Component {
 					<div>
 						<div className="plant-details">
 							<img className="plant-image" src={selectedPlant.image} alt="" />
-							<div>
+							<div className="plant-description">
 								<p>{selectedPlant.name}</p>
 								<p>Description: {selectedPlant.description}</p>
 								<p>Size: {selectedPlant.size}</p>
@@ -43,7 +43,7 @@ class ShowPlant extends Component {
 							</div>
 						</div>
 						{this.state.isEdit ?
-								<form onSubmit={(e) => {
+								<form className="plant-update-form" onSubmit={(e) => {
 										e.preventDefault()
 										this.props.updatePlant(this.props.plant)
 										this.setState({
@@ -61,15 +61,18 @@ class ShowPlant extends Component {
 										<button>Submit</button>
 								</form>
 								:
-								<button onClick={() => {
+								<button className="update-button" onClick={() => {
 										this.props.setUpdateForm(this.props.plant)
 										this.setState({ isEdit: this.props.plant.id })
 								}}>Update Plant</button>
-            }
-						<button onClick={() => {
-							this.props.deletePlant(this.props.plant)
-							this.props.history.push(`/users/${this.props.currentUser.user_id}`)
-						}}>Delete Plant</button>
+								
+						}
+						<div className="delete">
+							<button className="delete-button" onClick={() => {
+								this.props.deletePlant(this.props.plant)
+								this.props.history.push(`/users/${this.props.currentUser.user_id}`)
+							}}>Delete Plant</button>
+						</div>
 					</div>
 				}
 			</div>

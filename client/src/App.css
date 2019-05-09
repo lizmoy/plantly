@@ -244,7 +244,7 @@ a {
 }
 
 .plant-image {
-  max-width: 200px;
+  max-height: 400px;
 }
 
 p {
@@ -297,5 +297,54 @@ p {
 }
 
 .plant-details {
+  width: 657px;
   border: 1px solid black;
+  display: flex;
+}
+
+.plant-description {
+  font-family: 'Inconsolata', monospace;
+  font-size: 12pt;
+  padding: 15px;
+}
+
+.update-button,
+.delete-button {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  font-size: 10pt;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 4px 12px 4px 12px;
+  margin-top: 20px;
+}
+
+.update-button {
+  background-color: #0a6334;
+  width: 200px;
+  height: 30px;
+}
+
+.delete-button {
+  background-color: #87221E;
+  width: 200px;
+  height: 30px;
+}
+
+.plant-update-form {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #B37266;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.delete {
+  display: flex;
+  justify-content: flex-end;
 }
