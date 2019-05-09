@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3000'
+const baseUrl = 'https://boiling-sands-66126.herokuapp.com/'
 
 export const loginUser = (loginData) => {
   const opts = {
