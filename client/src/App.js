@@ -181,7 +181,17 @@ class App extends Component {
           ?
           <div className="logged-in">
             <p className="welcome">Hi {this.state.currentUser.username}</p>
-            <button className="logout-button" onClick={this.handleLogout}>Logout</button>
+            <button className="logout-button" onClick={ async () => {
+              await this.handleLogout()
+              this.setState({
+                authForm: {
+                  username: '',
+                  email: '',
+                  password: ''
+                }
+              })
+            }}
+            >Logout</button>
           </div>
           :
           <button className="login-button" onClick={() => this.props.history.push('/login')}>Login</button>

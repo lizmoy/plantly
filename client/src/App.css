@@ -73,7 +73,6 @@ a {
   max-width: 500px;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid black; */
   align-items: flex-start;
   margin-left: 150px;
 }
@@ -127,7 +126,6 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin: 0px 380px 0px 200px; */
   background-color: #FBF7D6;
   border-radius: 4px;
 }
@@ -372,4 +370,4 @@ p {
 .delete {
   display: flex;
   justify-content: flex-end;
-}
+} 
