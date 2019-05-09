@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans');
 
 .App {
-  text-align: center;
+  width: 100%;
+  height: 100vh;
 }
 
 /* --------------------- Header ------------------------- */
@@ -12,6 +13,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 8;
 }
 
 .logo {
@@ -56,11 +59,59 @@ a {
   font-size: 12pt;
 }
 
+/* --------------------- Home Page ---------------------- */
+
+.description-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #F3F0E9;
+  align-items: center;
+}
+
+.description {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  align-items: flex-start;
+  margin-left: 150px;
+}
+
+.description-title {
+  position: relative;
+  z-index: 6;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 60pt;
+  font-weight: bold;
+  color: #020100;
+  margin: 0;
+  margin-left: 50px;
+}
+
+.description-tagline {
+  position: relative;
+  z-index: 6;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 25pt;
+  font-weight: bold;
+  color: #020100;
+  text-align: end;
+  margin-left: 60px;
+}
+
+.bitplant {
+  max-width: 280px;
+  margin-left: 80px;
+  position: relative;
+  z-index: 4;
+}
+
 /* --------------------- Auth Form ---------------------- */
 
 .auth-container {
   background-color: #87221E;
-  height: 330px;
+  height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -69,6 +120,7 @@ a {
   position: relative;
   z-index: 8;
   right: 50%;
+  top: -8%;
   min-width: 350px;
   height: 260px;
   display: flex;
@@ -101,7 +153,7 @@ a {
   position: relative;
   z-index: 6;
   right: 45%;
-  top: 30%;
+  top: 13%;
 }
 
 .auth-form-title {

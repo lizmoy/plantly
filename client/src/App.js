@@ -7,6 +7,7 @@ import ShowUserPlants from './components/ShowUserPlants'
 import ShowPlant from './components/ShowPlant'
 import { loginUser, registerUser, showUserPlants, createPlant, destroyPlant, updatePlant, showUserLogs } from './services/api-helper'
 import './App.css';
+import Homepage from './components/Homepage';
 
 class App extends Component {
   constructor(props){
@@ -183,7 +184,7 @@ class App extends Component {
           <button className="login-button" onClick={() => this.props.history.push('/login')}>Login</button>
           }
         </header>
-        
+        <Route exact path="/" component={Homepage}/>
         {!this.state.currentUser &&
         <>
         <Route path="/register" render={() => (
