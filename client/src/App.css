@@ -121,8 +121,8 @@ a {
   z-index: 8;
   right: 50%;
   top: -8%;
-  min-width: 350px;
-  height: 260px;
+  min-width: 400px;
+  height: 310px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,13 +152,21 @@ a {
 .auth-circle-leaf {
   position: relative;
   z-index: 6;
-  right: 45%;
+  right: 90%;
   top: 13%;
+}
+
+.auth-star-leaf {
+  position: relative;
+  z-index: 2;
+  right: 65%;
+  top: -40%;
+  transform: rotate(-15deg)
 }
 
 .auth-form-title {
   font-family: 'Work Sans', sans-serif;
-  font-size: 18pt;
+  font-size: 20pt;
   font-weight: bold;
   margin: 2px auto;
   margin-bottom: 10px;
@@ -166,16 +174,18 @@ a {
 
 .auth-register {
   font-family: 'Work Sans', sans-serif;
-  font-size: 9pt;
+  font-size: 10pt;
   margin-top: 12px;
 }
 
 .auth-form-field {
-  width: 200px;
+  width: 220px;
   margin: 10px auto;
   background-color: #FBF7D6;
   border: none;
   border-bottom: 1px solid black;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12pt;
 }
 
 ::placeholder {
