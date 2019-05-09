@@ -105,8 +105,10 @@ class App extends Component {
   handleLogout() {
     localStorage.clear()
     this.setState({
-      currentUser: null
+      currentUser: null,
+      plants: []
     })
+    this.props.history.push('/')
   }
 
   //====================Calls for data===================
@@ -115,6 +117,7 @@ class App extends Component {
     console.log("data", data)
     const user = await showUserPlants(data.user_id)
     this.setState({ plants: user.plants })
+    console.log("user", user)
   }
 
   getPlant(plant){
@@ -208,7 +211,7 @@ class App extends Component {
      
         {this.state.currentUser &&  (
           <div className="plant-parent-container">
-            <Link to={`/users/${this.state.currentUser.user_id}`} className="plants-link">My Plants</Link>
+            <Link to={`/users/${this.state.currentUser.user_id}`} onClick={() => this.getUserPlants(this.state.currentUser)}className="plants-link">My Plants</Link>
             <Route exact path={`/users/${this.state.currentUser.user_id}`} render={() => (
               <ShowUserPlants
                 plants={this.state.plants}
