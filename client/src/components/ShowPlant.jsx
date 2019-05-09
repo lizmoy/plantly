@@ -34,7 +34,7 @@ class ShowPlant extends Component {
 						<div className="plant-details">
 							<img className="plant-image" src={selectedPlant.image} alt="" />
 							<div className="plant-description">
-								<p>{selectedPlant.name}</p>
+								<p id="plant-name">{selectedPlant.name}</p>
 								<p>Description: {selectedPlant.description}</p>
 								<p>Size: {selectedPlant.size}</p>
 								<p>Light: {selectedPlant.light}</p>
@@ -58,7 +58,7 @@ class ShowPlant extends Component {
 										<input className="plant-form-input" name="water" type="text" value={this.props.formData.water} onChange={this.props.handleFormChange} placeholder="water"/>
 										<input className="plant-form-input" name="humidity" type="text" value={this.props.formData.humidity} onChange={this.props.handleFormChange} placeholder="humidity"/>
 										<input className="plant-form-input" name="image" type="text" value={this.props.formData.image} onChange={this.props.handleFormChange} placeholder="image"/>
-										<button>Submit</button>
+										<button className="update-plant-submit">Submit</button>
 								</form>
 								:
 								<button className="update-button" onClick={() => {

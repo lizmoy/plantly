@@ -244,11 +244,11 @@ a {
 }
 
 .plant-image {
-  max-height: 400px;
+  max-height: 300px;
 }
 
 p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .add-plant-button {
@@ -287,7 +287,8 @@ p {
   width: 450px;
 }
 
-.add-plant-submit {
+.add-plant-submit,
+.update-plant-submit {
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
   font-size: 10pt;
@@ -304,8 +305,12 @@ p {
 
 .plant-description {
   font-family: 'Inconsolata', monospace;
-  font-size: 12pt;
   padding: 15px;
+}
+
+#plant-name {
+  font-weight: bold;
+  font-size: 18pt;
 }
 
 .update-button,
@@ -318,12 +323,21 @@ p {
   border-radius: 10px;
   padding: 4px 12px 4px 12px;
   margin-top: 20px;
+  opacity: 0.95;
 }
 
 .update-button {
   background-color: #0a6334;
   width: 200px;
   height: 30px;
+}
+
+.update-button:hover {
+  opacity: 1;
+}
+
+.delete-button:hover {
+  opacity: 1;
 }
 
 .delete-button {
