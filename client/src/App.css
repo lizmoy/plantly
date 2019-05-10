@@ -20,7 +20,7 @@
 .logo {
   margin: 10px;
   font-family: 'Work Sans', sans-serif;
-  font-size: 30pt;
+  font-size: 36pt;
   font-weight: bold;
   color: white;
   justify-content: flex-start;
@@ -38,7 +38,7 @@ a {
   background-color: #B37266;
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
-  font-size: 12pt;
+  font-size: 14pt;
   color: white;
   border: none;
   border-radius: 10px;
@@ -118,10 +118,10 @@ a {
 .auth-form {
   position: relative;
   z-index: 8;
-  right: 50%;
+  right: 60%;
   top: -8%;
-  min-width: 400px;
-  height: 310px;
+  min-width: 600px;
+  height: 410px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,75 +132,84 @@ a {
 
 .auth-oval-leaf {
   position: relative;
-  z-index: 4;
+  z-index: 6;
   right: 9%;
   top: -20%;
   transform: rotate(55deg);
-  max-width: 400px;
+  max-width: 420px;
 }
 
 .auth-dark-leaf {
   position: relative;
-  z-index: 2;
-  right: 49%;
-  top: 10%;
+  z-index: 4;
+  right: 42%;
+  top: 8%;
   width: 300px;
 }
 
 .auth-circle-leaf {
   position: relative;
   z-index: 6;
-  right: 90%;
-  top: 13%;
+  right: 94%;
+  top: 18%;
 }
 
 .auth-star-leaf {
   position: relative;
   z-index: 2;
-  right: 65%;
-  top: -40%;
+  right: 60%;
+  top: -50%;
   transform: rotate(-15deg)
+}
+
+.auth-heart-leaf {
+  position: relative;
+  z-index: 2;
+  right: 52%;
+  top: 15%;
+  transform: rotate(-100deg);
+  width: 300px;
 }
 
 .auth-form-title {
   font-family: 'Work Sans', sans-serif;
-  font-size: 20pt;
+  font-size: 32pt;
   font-weight: bold;
   margin: 2px auto;
-  margin-bottom: 10px;
+  margin-bottom: 22px;
 }
 
 .auth-register {
   font-family: 'Work Sans', sans-serif;
-  font-size: 10pt;
-  margin-top: 12px;
+  font-size: 13pt;
+  margin-top: 20px;
 }
 
 .auth-form-field {
-  width: 220px;
+  width: 320px;
   margin: 10px auto;
   background-color: #FBF7D6;
   border: none;
   border-bottom: 1px solid black;
   font-family: 'Work Sans', sans-serif;
-  font-size: 12pt;
+  font-size: 16pt;
 }
 
 ::placeholder {
   font-family: 'Work Sans', sans-serif;
-  font-size: 10pt;
+  font-size: 16pt;
 }
 
 .auth-form-submit-button {
   background-color: #B37266;
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
-  font-size: 10pt;
+  font-size: 14pt;
   color: white;
   border: none;
   border-radius: 10px;
-  padding: 4px 12px 4px 12px;
-  margin-top: 12px;
+  padding: 8px 20px 8px 20px;
+  margin-top: 20px;
 }
 
 /* -------------------- Plants ------------------- */

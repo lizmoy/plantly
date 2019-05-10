@@ -168,6 +168,7 @@ class App extends Component {
     }))
   }
 
+
   render() {
     console.log("currentUser", this.state.currentUser)
     console.log("plants", this.state.plants)
@@ -221,7 +222,7 @@ class App extends Component {
      
         {this.state.currentUser &&  (
           <div className="plant-parent-container">
-            <Link to={`/users/${this.state.currentUser.user_id}`} onClick={() => this.getUserPlants(this.state.currentUser)}className="plants-link">My Plants</Link>
+            <Link to={`/users/${this.state.currentUser.user_id}`} onClick={() => this.getUserPlants(this.state.currentUser)} className="plants-link">My Plants</Link>
             <Route exact path={`/users/${this.state.currentUser.user_id}`} render={() => (
               <ShowUserPlants
                 plants={this.state.plants}

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import leaf1 from '../images/circle_leaf.png'
 import leaf2 from '../images/oval_leaf.png'
 import leaf3 from '../images/dark_leaf.png'
+import leaf4 from '../images/heart_leaf.png'
 import leaf5 from '../images/star_leaf.png'
 
 export default function AuthForm (props) {
@@ -11,6 +12,7 @@ export default function AuthForm (props) {
         <div className="auth-container">
             <img src={leaf2} alt="" className="auth-oval-leaf"/>
             <img src={leaf3} alt="" className="auth-dark-leaf"/>
+            <img src={leaf4} alt="" className="auth-heart-leaf"/>
             <form className="auth-form" onSubmit={(e) => {
                 e.preventDefault()
                 handleSubmit()
