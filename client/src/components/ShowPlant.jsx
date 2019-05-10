@@ -35,11 +35,11 @@ class ShowPlant extends Component {
 							<img className="plant-image" src={selectedPlant.image} alt="" />
 							<div className="plant-description">
 								<p id="plant-name">{selectedPlant.name}</p>
-								<p>Description: {selectedPlant.description}</p>
-								<p>Size: {selectedPlant.size}</p>
-								<p>Light: {selectedPlant.light}</p>
-								<p>Water: {selectedPlant.water}</p>
-								<p>Humidity: {selectedPlant.humidity}</p>
+								<p className="plant-detail"><span className="detail-bold">Description:</span> {selectedPlant.description}</p>
+								<p className="plant-detail"><span className="detail-bold">Size:</span> {selectedPlant.size}</p>
+								<p className="plant-detail"><span className="detail-bold">Light:</span> {selectedPlant.light}</p>
+								<p className="plant-detail"><span className="detail-bold">Water:</span> {selectedPlant.water}</p>
+								<p className="plant-detail"><span className="detail-bold">Humidity:</span> {selectedPlant.humidity}</p>
 							</div>
 						</div>
 						{this.state.isEdit ?
