@@ -8,6 +8,7 @@ import ShowPlant from './components/ShowPlant'
 import { loginUser, registerUser, showUserPlants, createPlant, destroyPlant, updatePlant } from './services/api-helper'
 import './App.css';
 import Homepage from './components/Homepage';
+import plants from './images/plants.png'
 
 class App extends Component {
   constructor(props){
@@ -31,7 +32,8 @@ class App extends Component {
         user_id: ""
       },
       plants: [],
-      plant: null
+      plant: null,
+      dashboard: true
     }
     this.handleAuthChange = this.handleAuthChange.bind(this)
     this.handleRegister = this.handleRegister.bind(this)
@@ -223,8 +225,22 @@ class App extends Component {
         {this.state.currentUser &&  (
           <div className="plant-parent-container">
             {console.log("this.state.plant", this.state.plant)}
-            {!this.state.plant && <p className="dashboard">Welcome to your Dashboard!</p>}
-            <Link to={`/users/${this.state.currentUser.user_id}`} onClick={() => this.getUserPlants(this.state.currentUser)} className="plants-link">My Plants</Link>
+            {this.state.dashboard === true ?
+              <div className="dash">
+                <p className="dashboard">Welcome to your Dashboard!</p>
+                <img src={plants} alt="" className="dashboard-img"/>
+              </div>
+              :
+              <div className="no-dash">
+                <p className="dashboard">Welcome to your Dashboard!</p>
+                <img src={plants} alt="" className="dashboard-img"/>
+              </div>
+            }
+            <Link to={`/users/${this.state.currentUser.user_id}`} onClick={() => {
+              this.getUserPlants(this.state.currentUser)
+              this.setState({ dashboard: false })
+            }}
+              className="plants-link">My Plants</Link>
             <Route exact path={`/users/${this.state.currentUser.user_id}`} render={() => (
               <ShowUserPlants
                 plants={this.state.plants}

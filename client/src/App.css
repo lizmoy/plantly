@@ -214,6 +214,16 @@ a {
 }
 
 /* -------------------- Plants ------------------- */
+.dash {
+  display: block;
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.no-dash {
+  display: none;
+}
 
 .dashboard {
   font-family: 'Work Sans', sans-serif;
@@ -222,6 +232,11 @@ a {
   color: #0a6334;
   margin-top: 30px;
   margin-bottom: 10px;
+}
+
+.dashboard-img {
+  width: 500px;
+  margin: 30px auto;
 }
 
 .plant-parent-container{
@@ -272,6 +287,7 @@ a {
 
 .plant-image {
   max-height: 300px;
+  max-width: 250px;
 }
 
 p {
