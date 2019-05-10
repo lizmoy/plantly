@@ -81,7 +81,7 @@ a {
   position: relative;
   z-index: 6;
   font-family: 'Work Sans', sans-serif;
-  font-size: 60pt;
+  font-size: 80pt;
   font-weight: bold;
   color: #020100;
   margin: 0;
@@ -92,7 +92,7 @@ a {
   position: relative;
   z-index: 6;
   font-family: 'Work Sans', sans-serif;
-  font-size: 25pt;
+  font-size: 35pt;
   font-weight: bold;
   color: #020100;
   text-align: end;
@@ -100,8 +100,9 @@ a {
 }
 
 .bitplant {
-  max-width: 280px;
-  margin-left: 80px;
+  max-width: 350px;
+  margin-left: 90px;
+  top: -7%;
   position: relative;
   z-index: 4;
 }
@@ -214,6 +215,15 @@ a {
 
 /* -------------------- Plants ------------------- */
 
+.dashboard {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  font-size: 28pt;
+  color: #0a6334;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
 .plant-parent-container{
   display: flex;
   flex-direction: column;
@@ -222,9 +232,9 @@ a {
 .plants-link {
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
-  font-size: 22pt;
+  font-size: 28pt;
   color: #020100;
-  margin: 20px auto;
+  margin: 40px auto;
   text-decoration-line: underline;
 }
 
@@ -256,7 +266,7 @@ a {
   justify-content: center;
   align-items: center;
   border: 1px solid #0a6334;
-  margin: 10px;
+  margin: 20px;
   padding: 0px;
 }
 
@@ -272,11 +282,11 @@ p {
   background-color: #B37266;
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
-  font-size: 10pt;
+  font-size: 14pt;
   color: white;
   border: none;
   border-radius: 10px;
-  padding: 4px 12px 4px 12px;
+  padding: 8px 20px 8px 20px;
   margin: 20px;
 }
 
@@ -290,6 +300,7 @@ p {
   background-color: #B37266;
   margin-top: 20px;
   border-radius: 4px;
+  font-size: 14pt;
 }
 
 .plant-form-title {
@@ -302,16 +313,19 @@ p {
 .plant-form-input {
   margin-bottom: 10px;
   width: 450px;
+  height: 25px;
+  font-size: 14pt;
 }
 
 .add-plant-submit,
 .update-plant-submit {
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
-  font-size: 10pt;
+  font-size: 14pt;
   border: none;
   border-radius: 10px;
-  padding: 4px 12px 4px 12px;
+  padding: 8px 20px 8px 20px;
+  margin-top: 5px;
 }
 
 .plant-details {
@@ -322,12 +336,13 @@ p {
 
 .plant-description {
   font-family: 'Inconsolata', monospace;
+  font-size: 18px;
   padding: 15px;
 }
 
 #plant-name {
   font-weight: bold;
-  font-size: 18pt;
+  font-size: 20pt;
 }
 
 .update-button,

@@ -222,6 +222,8 @@ class App extends Component {
      
         {this.state.currentUser &&  (
           <div className="plant-parent-container">
+            {console.log("this.state.plant", this.state.plant)}
+            {!this.state.plant && this.state.currentUser && <p className="dashboard">Welcome to your Dashboard!</p>}
             <Link to={`/users/${this.state.currentUser.user_id}`} onClick={() => this.getUserPlants(this.state.currentUser)} className="plants-link">My Plants</Link>
             <Route exact path={`/users/${this.state.currentUser.user_id}`} render={() => (
               <ShowUserPlants
