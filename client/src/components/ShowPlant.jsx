@@ -83,17 +83,17 @@ class ShowPlant extends Component {
 								}}>Update Plant</button>
 								
 						}
-							<Modal
-								show={this.state.show}
-								hideModal={this.hideModal}
-								deletePlant={this.props.deletePlant}
-								currentUser={this.props.currentUser}
-								plant={this.props.plant}
-							>
-							</Modal>
-					
-							<button onClick={this.showModal}>Delete Plant</button>
-						
+						<div className="delete-plant-div">
+							<button onClick={this.showModal} className="open-modal-button">Delete Plant</button>
+						</div>
+						<Modal
+							show={this.state.show}
+							hideModal={this.hideModal}
+							deletePlant={this.props.deletePlant}
+							currentUser={this.props.currentUser}
+							plant={this.props.plant}
+						>
+						</Modal>
 					</div>
 				}
 			</div>

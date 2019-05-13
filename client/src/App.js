@@ -111,6 +111,7 @@ class App extends Component {
       plants: []
     })
     this.props.history.push('/')
+    window.location.reload()
   }
 
   //====================Calls for data===================

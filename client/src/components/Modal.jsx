@@ -9,9 +9,9 @@ class Modal extends Component {
     return (
         <div className={showHideClassName}>
             <div className="modal-main">
-                <button><img src={x} className="modal-x" alt="" onClick={this.props.hideModal}/></button>
+                <button className="x-button"><img src={x} className="modal-x" alt="" onClick={this.props.hideModal}/></button>
                 <div className="modal-body">
-                    <p className="modal-message">Are you sure you want to say goodbye to this plant?</p>
+                    <p className="modal-message">Are you sure you want to delete this plant?</p>
                 </div>
                 <div className="delete">
                     <button className="delete-button" onClick={() => {
