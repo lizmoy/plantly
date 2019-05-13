@@ -10,7 +10,7 @@ class ShowUserPlants extends Component {
         return(
             <div className= "plant-container">
                 <div className="plants">
-                    {this.props.currentUser &&
+                    {this.props.currentUser && this.props.plants.length > 0 ?
                     this.props.plants.map(plant => (
                         <Link to={`/users/${this.props.currentUser.user_id}/plants/${plant.id}`} key={Math.random()} className="plant-info">
                             <React.Fragment >
@@ -19,7 +19,10 @@ class ShowUserPlants extends Component {
 							    <img className={!plant.image ? "hide" : "plant-image"} src={plant.image} alt="" />
                             </React.Fragment>
                         </Link>
-                    ))}
+                    ))
+                :
+                <div className="no-plants">You don't have any plants yet!</div>
+                }
                 </div>
                 <div className="add-form">
                     <AddPlantForm

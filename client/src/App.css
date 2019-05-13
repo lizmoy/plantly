@@ -266,6 +266,12 @@ a {
   justify-content: center;
 }
 
+.no-plants {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14pt;
+  color: #c85c50;
+}
+
 .plant-name {
   font-family: 'Work Sans', sans-serif;
   font-size: 14pt;
