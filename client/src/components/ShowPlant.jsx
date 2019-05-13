@@ -5,8 +5,11 @@ class ShowPlant extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isEdit: false
+			isEdit: false,
+			showModal: false
 		}
+		this.showModal = this.showModal.bind(this)
+		this.hideModal = this.hideModal.bind(this)
 	}
 
 	componentDidMount() {
@@ -17,6 +20,15 @@ class ShowPlant extends Component {
 			}
 		})
 	}
+
+	showModal(){
+        this.setState({ showModal: true })
+    }
+
+    hideModal(){
+        this.setState({ showModal: false })
+    }
+
 	render() {
 		console.log("this.props.plants", this.props.plants)
 		console.log("plant", this.props.plant)

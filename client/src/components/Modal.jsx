@@ -1,24 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Modal extends Component {
-    constructor(props) {
-        super(props)
-        this.state = { showModal: false }
-    }
+export default function Modal() {
+    const showHideClassName = this.props.show ? "modal display-block" : "modal display-none"
+    return (
+        <div>
 
-    showModal(){
-        this.setState({ showModal: true })
-    }
-
-    hideModal(){
-        this.setState({ showModal: false })
-    }
-
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+        </div>
+    )
 }
