@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import Modal from './Modal'
 
 class ShowPlant extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			isEdit: false,
-			showModal: false
+			show: false
 		}
 		this.showModal = this.showModal.bind(this)
 		this.hideModal = this.hideModal.bind(this)
@@ -22,11 +23,13 @@ class ShowPlant extends Component {
 	}
 
 	showModal(){
-        this.setState({ showModal: true })
+		console.log("showing Modal")
+        this.setState({ show: true })
     }
 
     hideModal(){
-        this.setState({ showModal: false })
+		console.log("hiding Modal")
+        this.setState({ show: false })
     }
 
 	render() {
@@ -39,6 +42,7 @@ class ShowPlant extends Component {
 		})
 	
 		console.log('selectedPlant:', selectedPlant)
+		console.log('this.state.show', this.state.show)
 		return (
 			<div>
 				{this.props.plants &&
@@ -79,12 +83,17 @@ class ShowPlant extends Component {
 								}}>Update Plant</button>
 								
 						}
-						<div className="delete">
-							<button className="delete-button" onClick={() => {
-								this.props.deletePlant(this.props.plant)
-								this.props.history.push(`/users/${this.props.currentUser.user_id}`)
-							}}>Delete Plant</button>
-						</div>
+							<Modal
+								show={this.state.show}
+								hideModal={this.hideModal}
+								deletePlant={this.props.deletePlant}
+								currentUser={this.props.currentUser}
+								plant={this.props.plant}
+							>
+							</Modal>
+					
+							<button onClick={this.showModal}>Delete Plant</button>
+						
 					</div>
 				}
 			</div>
