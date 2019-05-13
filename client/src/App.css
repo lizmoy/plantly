@@ -290,6 +290,10 @@ a {
   max-width: 250px;
 }
 
+.hide {
+  display: none;
+}
+
 p {
   font-size: 14px;
 }

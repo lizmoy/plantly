@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import AddPlantForm from './AddPlantForm';
+import avatar from '../images/plant_avatar.png'
 
 class ShowUserPlants extends Component {
     render() {
@@ -14,7 +15,8 @@ class ShowUserPlants extends Component {
                         <Link to={`/users/${this.props.currentUser.user_id}/plants/${plant.id}`} key={Math.random()} className="plant-info">
                             <React.Fragment >
                                 <p className="plant-name">{plant.name}</p>
-                                <img className="plant-image" src={plant.image} alt=""/>
+                                <img className={!plant.image ? "plant-image" : "hide"} src={avatar} alt="" />
+							    <img className={!plant.image ? "hide" : "plant-image"} src={plant.image} alt="" />
                             </React.Fragment>
                         </Link>
                     ))}

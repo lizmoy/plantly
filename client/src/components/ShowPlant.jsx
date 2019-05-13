@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import Modal from './Modal'
+import avatar from '../images/plant_avatar.png'
 
 class ShowPlant extends Component {
 	constructor(props) {
@@ -48,7 +49,8 @@ class ShowPlant extends Component {
 				{this.props.plants &&
 					<div>
 						<div className="plant-details">
-							<img className="plant-image" src={selectedPlant.image} alt="" />
+							<img className={!selectedPlant.image ? "plant-image" : "hide"} src={avatar} alt="" />
+							<img className={!selectedPlant.image ? "hide" : "plant-image"} src={selectedPlant.image} alt="" />
 							<div className="plant-description">
 								<p id="plant-name">{selectedPlant.name}</p>
 								<p className="plant-detail"><span className="detail-bold">Description:</span> {selectedPlant.description}</p>
